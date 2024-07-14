@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "author": "Artem Novikov <novartole@gmail.com>",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": -81.6, "left": -67.7, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -157.2,
+      "left": 33,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 28.8,
+      "left": 31.58,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -195.6,
+      "left": 23,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -234,
+      "left": 13.4,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -272.4,
+      "left": 3.8,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -310.8,
+      "left": -5.8,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led6",
+      "top": -147.6,
+      "left": -101.4,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led7",
+      "top": -176.4,
+      "left": -82.2,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led8",
+      "top": -205.2,
+      "left": -63,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led9",
+      "top": -243.6,
+      "left": -44.2,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led10",
+      "top": -282,
+      "left": -25,
+      "attrs": { "color": "red", "flip": "1" }
+    }
+  ],
+  "connections": [
+    [ "nano:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "nano:7", "pir1:OUT", "green", [ "v-19.2", "h124.8", "v105.6", "h-48.14" ] ],
+    [ "pir1:GND", "nano:GND.1", "black", [ "h-28.54", "v-28.8", "h38.4" ] ],
+    [ "nano:VIN", "pir1:VCC", "red", [ "v0" ] ],
+    [ "nano:2", "led1:A", "green", [ "v0" ] ],
+    [ "nano:12", "led6:A", "green", [ "v-9.6", "h-29.2" ] ],
+    [ "nano:11", "led7:A", "green", [ "v-19.2", "h-28.8", "v-38.4" ] ],
+    [ "nano:10", "led8:A", "green", [ "v-38.4", "h-19.2" ] ],
+    [ "nano:9", "led9:A", "green", [ "v-48", "h-10" ] ],
+    [ "nano:8", "led10:A", "green", [ "v0" ] ],
+    [ "nano:GND.2", "led6:C", "black", [ "v0" ] ],
+    [ "nano:GND.2", "led7:C", "black", [ "v-28.8", "h-114.8" ] ],
+    [ "nano:GND.2", "led8:C", "black", [ "v-28.8", "h-95.6" ] ],
+    [ "nano:GND.2", "led9:C", "black", [ "v-28.8", "h-57.6", "v-96" ] ],
+    [ "nano:GND.2", "led10:C", "black", [ "v-28.8", "h-57.6" ] ],
+    [ "led5:A", "nano:6", "green", [ "v0" ] ],
+    [ "nano:GND.2", "led5:C", "black", [ "v-28.8", "h19.2", "v-163.2" ] ],
+    [ "led4:A", "nano:5", "green", [ "v0" ] ],
+    [ "nano:GND.2", "led4:C", "black", [ "v-28.8", "h19.2", "v-124.8" ] ],
+    [ "nano:GND.2", "led3:C", "black", [ "v-28.8", "h19.2", "v-86.4" ] ],
+    [ "nano:4", "led3:A", "green", [ "v0" ] ],
+    [ "led2:A", "nano:3", "green", [ "v0" ] ],
+    [ "nano:GND.2", "led2:C", "black", [ "v-28.8", "h19.2", "v-48" ] ]
+  ],
+  "dependencies": {}
+}

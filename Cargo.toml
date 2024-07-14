@@ -1,0 +1,40 @@
+[package]
+name = "siluets-fish"
+version = "0.1.0"
+authors = ["Artem Novikov <novartole@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "siluets-fish"
+test = false
+bench = false
+
+[dependencies]
+panic-halt = "0.2.0"
+avr-device = "0.5.4"
+
+[dependencies.arduino-hal]
+git = "https://github.com/rahix/avr-hal"
+rev = "3e362624547462928a219c40f9ea8e3a64f21e5f"
+features = ["arduino-nano"]
+
+# The latest releases of `proc-macro2` do not support the rust toolchain that
+# we use.  Thus, we must fix this dependency to an older version where our
+# toolchain is still supported.  See https://github.com/Rahix/avr-hal/issues/537
+[build-dependencies.proc-macro2]
+version = "=1.0.79"
+
+[profile.dev]
+panic = "abort"
+debug = true
+lto = true
+opt-level = "s"
+
+# Configure the build for minimal size - AVRs have very little program memory
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = false
+lto = true
+opt-level = 3

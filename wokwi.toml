@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "./target/avr-atmega328p/release/siluets-fish.elf"
+elf = "./target/avr-atmega328p/release/siluets-fish.elf"
